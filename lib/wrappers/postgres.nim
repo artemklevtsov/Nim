@@ -276,6 +276,8 @@ proc pqsetnonblocking*(conn: PPGconn, arg: int32): int32{.cdecl,
     dynlib: dllName, importc: "PQsetnonblocking".}
 proc pqisnonblocking*(conn: PPGconn): int32{.cdecl, dynlib: dllName,
     importc: "PQisnonblocking".}
+proc pqsetsinglerowmode*(conn: PPGconn, arg: int32): int32{.cdecl,
+    dynlib: dllName, importc: "PQsetSingleRowMode".}
 proc pqflush*(conn: PPGconn): int32{.cdecl, dynlib: dllName, importc: "PQflush".}
 proc pqfn*(conn: PPGconn, fnid: int32, result_buf, result_len: ptr int32,
            result_is_int: int32, args: PPQArgBlock, nargs: int32): PPGresult{.
